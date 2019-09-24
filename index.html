@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Maquetacion para master framework js</title>
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    </head>
+    <body>
+        <header id="header">
+            <div class="center">
+                <!--LOGO-->
+                <div id="logo">
+                    <img src="assets/images/react.png" class="app-logo" alt="LogoTipo">
+                    <span id="brand">
+                        <strong>Master</strong>ReactJS
+                    </span>
+                </div>
+                <!--MENU-->
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="formulario.html">Formulario</a>
+                        </li>
+                        <li>
+                            <a href="#">Pagina 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Pagina 2</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!--LIMPEAR FLOTADOS-->
+                <div class="clearfix"></div>
+            </div>
+        </header>
+        <div id="slider" class="slider-big">
+            <h1>Bienvenido a Master ReactJS</h1>
+            <a href="#" class="btn-white">Ir al blog</a>
+        </div>
+        <div class="center">
+            <section id="content">
+                <h2 class="subheader">Ultimos articulos</h2>
+                <script type="text/javascript">
+                    window.addEventListener("load", function(){
+                        var template = document.getElementById("article-template");
+                        var articles = document.getElementById("articles");
+                        for(var i=1; i<=5; i++){
+                            var clonar = template.cloneNode(true);
+                            clonar.removeAttribute("id");
+                            var h2 = clonar.getElementsByTagName("h2")[0];
+                            h2.innerHTML = h2.textContent+' '+i;
+                            articles.appendChild(clonar);
+                        }
+                    });
+                    </script>
+                <!--lISTADO ARTICULOS-->
+                <div id="articles">
+                    <article class="article-item" id="article-template">
+                        <div class="image-wrap">
+                            <img src="data:image/jpeg;base64,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" alt="dato">
+                        </div>
+                        <h2>Articulo de prueba</h2>
+                        <span class="date">
+                            Hace 5 minutos
+                        </span>
+                        <a href="#">Leer mas</a>
+                        <div class="clearfix"></div>
+                    </article>
+                    <!--AÑADOR ARTICULOS CON JS-->
+                </div>
+            </section>
+            <aside id="sidebar">
+                <div id="nav-blog" class="sidebar-item">
+                    <h3>Puedes hacer esto</h3>
+                    <a href="#" class="btn btn-success">Crear articulo</a>
+                </div>
+                <div id="search" class="sidebar-item">
+                    <h3>Buscador</h3>
+                    <p>Encuentra el articulo que buscas</p>
+                    <form action="">
+                        <input type="text" name="search">
+                        <input type="sudmit" name="submit" class="btn" value="buscar">
+                    </form>
+                </div>
+            </aside>
+        </div>
+        <div class="clearfix"></div>
+        <footer id="footer">
+            <div class="center">
+                <p>&copy; By Bryan MasterReactJS</p>
+            </div>
+        </footer>
+    </body>
+</html>
